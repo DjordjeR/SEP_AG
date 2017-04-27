@@ -3,5 +3,5 @@ project(SEP_AG)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp cars/Car.cpp cars/Car.h)
 add_executable(SEP_AG ${SOURCE_FILES})
