@@ -5,6 +5,7 @@
 #ifndef SEP_AG_CAR_H
 #define SEP_AG_CAR_H
 
+#include <string>
 #include <vector>
 
 /*
@@ -14,13 +15,24 @@ class Car
 {
   public:
     /*
-     * Default constructor
+     * Default constructors
      */
+    Car();
     Car(std::string brand, float speed, std::string colour);
     /*
      * Copy constructor
      */
     Car(const Car &obj);
+
+    /*
+     * Overloading = operator
+     */
+    void operator=(const Car &obj);
+    /*
+     * Overloading == operator
+     */
+    bool operator==(const Car &obj);
+
     /*
      * Default destructor
      */
@@ -51,8 +63,17 @@ class Car
     void removeDuplicateCars(std::vector<Car> &cars);
 
   private:
+    /*
+     * Brand of the car
+     */
     std::string brand_;
+    /*
+     * Speed of the car
+     */
     float speed_;
+    /*
+     * Colour of the car
+     */
     std::string colour_;
 };
 
