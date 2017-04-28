@@ -7,7 +7,12 @@
 
 
 #include <string>
-#include <list>
+#include <vector>
+class Subject;
+
+/*
+ * Student class, holds the information about the student. Calculates average.
+ */
 class Student
 {
   public:
@@ -18,20 +23,32 @@ class Student
     /*
      * Destructor
      */
-    ~Student();
+    virtual ~Student();
     /*
      * Getters
      */
-    std::string getName();
-    std::list getSubjectList();
+    const std::string getName();
+    std::vector<Subject *>  *getSubjectList();
     /*
      * Setters
      */
     void setName(const std::string name);
-    void setSubjectList(std::list subject_list);
+    void setSubjectList( std::vector<Subject *>  *subject_list);
 
+    /*
+     * Calculate average for the student
+     */
+    float averageGrade();
 
   private:
+    /*
+     * Private copy constructor
+     */
+    Student(const Student &obj);
+    /*
+     * Private assignment operator
+     */
+    Student &operator=(const Student &obj);
     /*
      * Holds name of the student
      */
@@ -39,7 +56,7 @@ class Student
     /*
      * Holds the list of subjects
      */
-    std::list subject_list_;
+    std::vector<Subject *> *subject_list_;
 };
 
 

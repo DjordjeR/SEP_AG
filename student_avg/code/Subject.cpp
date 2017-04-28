@@ -14,22 +14,28 @@ Subject::~Subject()
 
 }
 //------------------------------------------------------------------------------
-std::string Subject::getName()
+const std::string Subject::getName()
 {
   return name_;
 }
 //------------------------------------------------------------------------------
-float Subject::getGrade()
+const float Subject::getGrade()
 {
   return grade_;
 }
 //------------------------------------------------------------------------------
-void Subject::setName(std::string name)
+void Subject::setName(const std::string name)
 {
   name_ = name;
 }
 //------------------------------------------------------------------------------
-void Subject::setGrade(float grade)
+void Subject::setGrade(const float grade)
 {
   grade_ = grade;
+}
+//------------------------------------------------------------------------------
+Subject::Subject(const Subject &obj)
+{
+  name_ = obj.name_;
+  grade_ = obj.grade_;
 }

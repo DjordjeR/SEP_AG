@@ -7,6 +7,9 @@
 
 #include <string>
 
+/*
+ * Subject class, to hold the information about the students subjects
+ */
 class Subject
 {
   public:
@@ -15,20 +18,23 @@ class Subject
      */
     Subject(std::string name, float grade);
     /*
+     * Copy constructor
+     */
+    Subject(const Subject &obj);
+    /*
      * Destructor
      */
-    ~Subject();
-
+    virtual ~Subject();
     /*
      * Getters
      */
-    std::string getName();
-    float getGrade();
+    const std::string getName();
+    const float getGrade();
     /*
      * Setters
      */
-    void setName(std::string name);
-    void setGrade(float grade);
+    void setName(const std::string name);
+    void setGrade(const float grade);
 
   private:
     /*
@@ -39,7 +45,10 @@ class Subject
      * Holds the grade of the subject
      */
     float grade_;
-
+    /*
+     * Overloading = operator
+     */
+    Subject &operator=(const Subject &obj);
 };
 
 
