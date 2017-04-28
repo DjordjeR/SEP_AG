@@ -1,35 +1,35 @@
 //
-// Created by DjordjeR on 28.04.17.
+// Created by raja on 28.04.17.
 //
 
-#include "Student.h"
+#include "Subject.h"
 //------------------------------------------------------------------------------
-Student::Student(std::string name) : name_(name)
+Subject::Subject(std::string name, float grade) : name_(name), grade_(grade)
 {
 
 }
 //------------------------------------------------------------------------------
-std::string Student::getName()
+Subject::~Subject()
+{
+
+}
+//------------------------------------------------------------------------------
+std::string Subject::getName()
 {
   return name_;
 }
 //------------------------------------------------------------------------------
-void Student::setName(std::string name)
+float Subject::getGrade()
+{
+  return grade_;
+}
+//------------------------------------------------------------------------------
+void Subject::setName(std::string name)
 {
   name_ = name;
 }
 //------------------------------------------------------------------------------
-Student::~Student()
+void Subject::setGrade(float grade)
 {
-
-}
-//------------------------------------------------------------------------------
-std::list Student::getSubjectList()
-{
-  return subject_list_;
-}
-//------------------------------------------------------------------------------
-void Student::setSubjectList(std::list subject_list)
-{
-  subject_list_ = subject_list;
+  grade_ = grade;
 }
